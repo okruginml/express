@@ -13,7 +13,7 @@ app.get('/task2A', (req, res) => {
   const sum = (+req.query.a || 0) + (+req.query.b || 0);
   res.send(sum.toString());
 });
-
+ // tASK2B
 app.get('/task2B', (req, res) => {
   const fname = req.query.fullname;
   var fio = fname.split(' ');
