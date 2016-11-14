@@ -28,13 +28,21 @@ app.get('/task2B', (req, res) => {
   if (nwords == 1) {
   	answer = (fio[0]);
   }
-  if (!!!fname) {
+  if (!fname) {
   	answer = 'Invalid fullname';
   }
   if (fname.match('[0-9]') != null) {
   	answer = 'Invalid fullname';
   }
   res.send(answer);
+});
+
+app.get('/task2C', (req, res) => {
+const url = req.query.username;
+const re = new RegExp('@?(https?:)?(\/\/)?((www|twitter|github|telegram|vk|vkontakte)[^\/]*\/)?([a-zA-Z0-9]*)', 'i');
+const usr = url.match(re);
+/*console.log(usr[5]);*/
+res.send('@' + usr[5]);
 });
 
 app.listen(3000, () => {
